@@ -112,7 +112,21 @@ with st.sidebar:
         )
 
     st.markdown("---")
-    st.markdown("#### 🏛️ System Architecture")
+    st.markdown("#### 🏛️ System Architecture & Demo")
+    
+    with st.expander("🎬 Watch Video Walkthrough Tour", expanded=False):
+        video_path = os.path.join(os.path.dirname(__file__), "assets", "demo_walkthrough.mp4")
+        if os.path.exists(video_path):
+            st.video(video_path)
+            with open(video_path, "rb") as vf:
+                st.download_button(
+                    label="📥 Download Walkthrough Video (MP4)",
+                    data=vf.read(),
+                    file_name="multimodal_construction_intelligence_demo.mp4",
+                    mime="video/mp4",
+                    use_container_width=True
+                )
+
     with st.expander("Kanban Epics & Tech Stack", expanded=False):
         st.markdown("""
         - **Epic 1:** Requirements & Streamlit Cloud Env

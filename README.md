@@ -9,6 +9,15 @@
 [![Code Style: Black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
 ---
+ 
+## 🎬 Interactive Feature Video Walkthrough
+
+A complete end-to-end video tour covering all 4 modules (PPE vision audit, crack pathology, INR valuation, and weather advisory):
+- **Local MP4 Video File:** [`assets/demo_walkthrough.mp4`](assets/demo_walkthrough.mp4) (Full HD, 670 frames)
+- **Local WebP Video File:** [`assets/demo_walkthrough.webp`](assets/demo_walkthrough.webp)
+- **Live Streamlit App:** Embedded directly in the sidebar under **"🎬 Watch Video Walkthrough Tour"** with 1-click download.
+
+---
 
 ## 📌 Executive Summary & Scope
 
