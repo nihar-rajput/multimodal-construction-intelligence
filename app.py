@@ -48,7 +48,15 @@ load_css()
 
 # Session State Initialization
 if "gemini_api_key" not in st.session_state:
-    st.session_state.gemini_api_key = os.environ.get("GEMINI_API_KEY", "")
+    api_key_candidate = os.environ.get("GEMINI_API_KEY", "")
+    try:
+        if not api_key_candidate and hasattr(st, "secrets") and "GEMINI_API_KEY" in st.secrets:
+            api_key_candidate = str(st.secrets["GEMINI_API_KEY"])
+    except Exception:
+        pass
+    st.session_state.gemini_api_key = api_key_candidate
+    if api_key_candidate:
+        init_gemini(api_key_candidate)
 
 if "safety_result" not in st.session_state:
     st.session_state.safety_result = None
